@@ -1,0 +1,23 @@
+CREATE TABLE store_database (id INTEGER PRIMARY KEY, color TEXT, price INTEGER, size TEXT, season TEXT);
+
+INSERT into store_database VALUES (1, "black", 20, "M", "Fall");
+INSERT into store_database VALUES (2, "purple", 15, "S", "Spring"); 
+INSERT into store_database VALUES (3, "pink", 15, "L", "Spring"); 
+INSERT into store_database VALUES (4, "white", 5, "M","Summer"); 
+INSERT INTO store_database VALUES (5, "black", 5, "S", "Winter"); 
+INSERT INTO store_database VALUES (6, "green", 15, "L", "Winter");
+INSERT INTO store_database VALUES (7, "white", 15, "S", "Winter"); 
+INSERT INTO store_database VALUES (8, "red", 20, "L", "Winter");
+INSERT INTO store_database VALUES (9, "blue", 5, "S", "Summer"); 
+INSERT INTO store_database VALUES (10, "red", 5, "M", "Fall"); 
+INSERT INTO store_database VALUES (11, "orange", 15, "S", "Fall"); 
+INSERT INTO store_database VALUES (12, "pink", 5, "M", "Summer"); 
+INSERT INTO store_database VALUES (13, "white", 10, "S", "Spring");
+INSERT INTO store_database VALUES (14, "yellow", 12, "M", "Spring"); 
+INSERT INTO store_database VALUES (15, "orange", 20, "L", "Spring"); 
+
+--ordering the store clothing items by price in ascending order. 
+SELECT * FROM store_database order by price asc; 
+
+-- calculated the total price of  
+SELECT SUM (price) FROM store_database; 
