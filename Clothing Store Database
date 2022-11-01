@@ -1,6 +1,3 @@
-## Welcome to my SQL portfolio!This code repository contains an example of SQL for a clothing store database and its statistical findings. Feel free to check out my 
-repository and reach out to me if you have any questions. 
-
 CREATE TABLE store_database (id INTEGER PRIMARY KEY, color TEXT, price INTEGER, size TEXT, season TEXT);
 
 INSERT into store_database VALUES (1, "black", 20, "M", "Fall");
