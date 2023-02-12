@@ -17,6 +17,12 @@ AND length (orderID) = 6;
 
 #3 Select the customer account numbers for all the orders that were placed in February.
 
+SELECT acctnum 
+FROM BIT_DB.customers
+JOIN BIT_DB.FebSales
+ON customers.order_id = FebSales.orderID
+WHERE length (order_id) = 6;
+
 
 #4 Which product was the cheapest one sold in January, and what was the price?
 #5 What is the total revenue for each product sold in January? (Revenue can be calculated using the number of products sold and the price of the products).
