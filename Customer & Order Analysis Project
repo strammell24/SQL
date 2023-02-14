@@ -36,10 +36,7 @@ GROUP BY product;
 
 #6 Which products were sold in February at 548 Lincoln St, Seattle, WA 98101, how many of each were sold, and what was the total revenue?
 
-SELECT product, count (product), sum (Quantity) * price AS Revenue 
-FROM BIT_DB.FebSales
-WHERE location = '548 Lincoln St, Seattle, WA 98101'
-GROUP BY Product;
+
 
 
 #7 How many customers ordered more than 2 products at a time in February, and what was the average amount spent for those customers?
