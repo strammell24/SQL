@@ -27,5 +27,27 @@ time_signature integer NOT NULL )
 
 # Then, I then observed and analyzed the data. 
 
+# First, I determined the average popularity of tracks by Doja Cat.  
+
+SELECT AVG(popularity) FROM BIT_DB.Spotifydata
+WHERE artist_name = 'Doja Cat';
+
+# Then, I determined who the top 5 artists are based on popularity. 
+
+SELECT artist_name, popularity 
+FROM BIT_DB.Spotifydata
+ORDER BY popularity DESC
+LIMIT 5;
+
+# Lastly, I dewtermined which track was the loudest. 
+
+SELECT track_name 
+FROM BIT_DB.Spotifydata
+ORDER BY loudness Desc
+LIMIT 1;
+
+
+
+
 
 
