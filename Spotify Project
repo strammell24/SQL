@@ -46,6 +46,20 @@ FROM BIT_DB.Spotifydata
 ORDER BY loudness Desc
 LIMIT 1;
 
+# I then created a CTE to help create a SQL query centered around the popularity of artists. I had to calculate the average popularity for artists in the 
+Spotify table and then I had to show the artist name, average popularity and "Top Star" for each artist: 
+
+WITH popularity_average_CTE AS(
+SELECT s.artist_name, AVG (s.popularity) AS average_popularity
+FROM Spotifydata s
+GROUP BY s.artist_name)
+
+SELECT artist_name, average_popularity, 'Top Star' as Tag
+FROM popularity_average_CTE
+WHERE average_popularity >= 90;
+
+
+
 
 
 
