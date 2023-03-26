@@ -1,1 +1,13 @@
-# In this SQL City Bake Lane Project, I had to answer questions by first creating 
+# In this City Bike Lanes project, I inserted the City Bike Lanes data into a table I created. 
+# I then used a CTE to help see which bike lanes were the safest bike lanes based on their ratings being 4.0 or above: 
+
+WITH average_safety_rating_CTE As (
+SELECT c. street, 
+AVG (c.safetyrating) as  sr
+FROM CityBikeLanes as c
+GROUP BY c.street)
+
+SELECT street, sr, 'Safe Lane' as tag
+FROM average_safety_rating_CTE 
+WHERE sr >=4.0
+GROUP BY street; 
