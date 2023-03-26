@@ -7,7 +7,7 @@ AVG (c.safetyrating) as  sr
 FROM CityBikeLanes as c
 GROUP BY c.street)
 
-SELECT street, sr, 'Safe Lane' as tag
+SELECT street, sr, 'Safe Lane' as label
 FROM average_safety_rating_CTE 
 WHERE sr >=4.0
 GROUP BY street; 
