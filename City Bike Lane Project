@@ -11,3 +11,12 @@ SELECT street, rating, 'Safe Lane' as label
 FROM average_safety_rating_CTE 
 WHERE rating >=4.0
 GROUP BY street;
+
+# Next, I used a window function to help analyze if it is recommended for a safety bike lane to stay or to leave: 
+
+SELECT street, safetyrating, AVG (safetyrating) OVER (Partition by street)  as "Average_safety_rating", 
+CASE WHEN AVG(safetyrating) OVER (Partition by street) >= 4 THEN "Leave As-Is"
+     WHEN AVG(safetyrating) OVER (Partition by street) < 2.5 THEN "Remove"
+     ELSE "Improvements Needed"
+     END AS "Recommendation"
+FROM CityBikeLanes;
