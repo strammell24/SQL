@@ -1,3 +1,16 @@
 # In my Music SQL Project, I used SQL to answer questions about a Digital Media store: 
 
-# What were the total number of sales for 2013
+# 1 What were the total number of sales for 2013?
+
+SELECT SUM (Total ) FROM chinook.invoices
+WHERE InvoiceDate BETWEEN '2013-01-01' AND '2013-12-31';
+
+#2 Which album had the most sales in 2013?
+
+
+
+
+
+
+
+
