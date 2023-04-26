@@ -5,7 +5,18 @@
 SELECT SUM (Total ) FROM chinook.invoices
 WHERE InvoiceDate BETWEEN '2013-01-01' AND '2013-12-31';
 
-#2 Which album had the most sales in 2013?
+#2 What is the invoice total, customer name, and country for all invoices and customers in the United States? 
+
+SELECT customers.FirstName, customers.LastName, invoices.BillingCountry, invoices.total
+FROM invoices
+JOIN customers 
+ON invoices.CustomerId=customers.Customerid
+WHERE BillingCountry = 'USA';
+
+#3 
+
+
+
 
 
 
