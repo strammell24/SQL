@@ -13,7 +13,14 @@ JOIN customers
 ON invoices.CustomerId=customers.Customerid
 WHERE BillingCountry = 'USA';
 
-#3 
+#3 What are the total sales made by each sales agent?
+
+SELECT employees.FirstName, employees.LastName, Round(Sum(invoices.Total),0)
+FROM employees 
+JOIN customers ON employees.employeeID=customers.SupportRepid
+JOIN invoices ON customers.Customerid=invoices.CustomerId
+WHERE employees.Title = 'Sales Support Agent'
+GROUP BY employees.FirstName;
 
 
 
