@@ -1,1 +1,20 @@
+#1 I queried data to filter only the names of the products offered by the bank: 
+
+SELECT product_name 
+FROM bank_products;
+
+#2 I use the "OR" operator to query the product names that were checking or savings accounts: 
+
+SELECT product_name
+FROM bank_products 
+WHERE product_type = "Checking" 
+OR product_type = "Savings";
+
+#3 I used the WHERE statement and "AND" and "OR" operators to query financial products that have interest rates at least 0.75%: 
+
+SELECT product_name, interest_rate
+FROM bank_products 
+WHERE product_type = "Savings"
+AND interest_rate >= 0.75
+AND monthly_fee = 0;
 
