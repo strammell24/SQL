@@ -1,0 +1,13 @@
+#1. In the first query, I used the WHERE statement to filter only internet product names: 
+
+SELECT product_name
+FROM products
+WHERE product_type = "Internet";
+
+#2. I then queried the data to find the customer ID information of customers who subscribed to high speed internet: 
+
+SELECT customer_id 
+FROM customer_subscriptions
+WHERE product_id=1;
+
+#3. 
