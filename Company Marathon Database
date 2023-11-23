@@ -11,3 +11,15 @@ FROM marathon;
 SELECT participant_name, 
 ROUND(completion_fraction*100,1) as percent_completed
 FROM marathon;
+
+#3. I used ther CASE statement to create a new column that showed the number of employees that completed each quarter of the marathon: 
+
+SELECT COUNT(*) as Number_of_Employees, 
+CASE 
+WHEN completion_fraction >=.75 THEN "75%+"
+WHEN completion_fraction >=.50 THEN "50%+"
+WHEN completion_fraction >=.25 THEN "25%+"
+ELSE "Under 25%"
+END AS "Quarter_completed"
+FROM marathon
+GROUP BY quarter_completed;
