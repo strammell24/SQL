@@ -1,11 +1,11 @@
-#1. For the first query, I used the HAVING clause to to show the sum of the salaries for each department in a company where the totals salary spent on each department was $300,000. 
+#1. For the first query, I used the HAVING and GROUP BY statements to show the sum of the salaries for each department in a company where the totals salary spent on each department was $300,000. 
 
 SELECT department, SUM(salary) AS total_salary_spent
 FROM employees 
 GROUP BY department
 HAVING total_salary_spent>= 300000;
 
-#2. I also used the HAVING clause to find the average salary for each department that was at least $70,000: 
+#2. I also used the HAVING and GROUP BY statements to find the average salary for each department that was at least $70,000: 
 
 SELECT department, AVG(salary) As average_salary
 FROM employees 
