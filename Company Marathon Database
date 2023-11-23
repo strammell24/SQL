@@ -1,0 +1,13 @@
+# In this SQL project, I used mathematical operators to calculated and retrieve data from the table, that contains data about participants in a marathon. 
+
+#1. I used multiplication in SQL to calculate the percentage of the marathan that each parcipant completed: 
+
+SELECT participant_name, 
+completion_fraction*100 as percent_completed
+FROM marathon; 
+
+#2. I used the ROUND function to calculate the percentage of the marathon completed, to one decimal place, for every participant in the marathon: 
+
+SELECT participant_name, 
+ROUND(completion_fraction*100,1) as percent_completed
+FROM marathon;
