@@ -1,0 +1,10 @@
+# In this SQL project, I inserted data, from a Fortune 500 database, into a table. I then queried the data to answer questions about the Fortune 500 companies: 
+
+# First, I used a CASE statment to group the Fortune 500 companies according to the number of employees: 
+
+
+# Then, I used the HAVING clause to find out the average revenue of companies based on their industries. I used the GROUP BY statement group the results by industry: 
+
+# Next, I used a logical operator to filter out the companies that had at least 20 paid time off day and healhcare benefits: 
+
+# Lastly, I used an aggregate function to see the top 10 companies that had the longest employee tenures: 
