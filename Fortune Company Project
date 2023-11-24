@@ -2,6 +2,15 @@
 
 # First, I used a CASE statment to group the Fortune 500 companies according to the number of employees: 
 
+SELECT company_name, employees,   
+CASE 
+WHEN employees <= 9999 THEN "Small_sized_company"
+WHEN employees <= 99999 THEN "Medium_sized_company"
+WHEN employees <= 999999 THEN "Larged_sized_company"
+ELSE "Mega_sized_company"
+END AS "Company_size"
+FROM fortune_companies
+ORDER BY employees asc;
 
 # Then, I used the HAVING clause to find out the average revenue of companies based on their industries. I used the GROUP BY statement group the results by industry: 
 
