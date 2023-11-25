@@ -12,7 +12,12 @@ END AS "Company_size"
 FROM fortune_companies
 ORDER BY employees asc;
 
-# Then, I used the HAVING clause to find out the average revenue of companies based on their industries. I used the GROUP BY statement group the results by industry: 
+# Then, I used the HAVING clause to filter and see which industry has an average paid time off of at least 20 days: 
+
+SELECT industry, AVG(paid_time_off_days) AS Average_PTO_Days
+FROM fortune_companies
+GROUP BY industry
+HAVING AVG(paid_time_off_days)>=20;
 
 # Next, I used a logical operator to filter out the companies that had at least 20 paid time off day and healhcare benefits: 
 
