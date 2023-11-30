@@ -12,4 +12,4 @@ SELECT COUNT ("netflix_titles_info".title)
 FROM "netflix_titles_info"
 WHERE "netflix_titles_info".type = 'Movie';
 
-#3. 
+#3. i
