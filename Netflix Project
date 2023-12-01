@@ -1,6 +1,6 @@
 # In this Netfilx project, I used the Postgre SQL dialect to query data about Netflix films.
 
-#1.  I used a left join to join two different tables: 
+#1. I used a left join to join two different tables: 
 
 SELECT Titles.show_id, Titles.type, Titles.title, Titles.date_added
 FROM "netflix_titles_info" as Titles 
@@ -12,4 +12,4 @@ SELECT COUNT ("netflix_titles_info".title)
 FROM "netflix_titles_info"
 WHERE "netflix_titles_info".type = 'Movie';
 
-#3. i
+#3. I 
