@@ -12,4 +12,15 @@ SELECT COUNT ("netflix_titles_info".title)
 FROM "netflix_titles_info"
 WHERE "netflix_titles_info".type = 'Movie';
 
-#3. I 
+#3. I then used the MAX function to find the most recent batch of tv shows/movies that were added to the database: 
+
+SELECT MAX(DATE(date_added))
+FROM "netflix_titles_info";
+
+#4. Next, I listed all of the movies and tv shows alphabetically:
+
+SELECT title 
+FROM "netflix_titles_info"
+ORDER BY title asc;
+
+#5. 
