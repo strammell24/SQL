@@ -60,7 +60,7 @@ VALUES
     ('s20', NULL, 'Blanca SuÃ¡rez| IvÃ¡n Marcos| Ã“scar Casas| AdriÃ¡n Lastra| Francesc Garrido| Stefan Weinert| Julia MÃ¶ller| Alicia Chojnowski')
     ;
 
-I then used SQL t
+I then used SQL to query the data: 
 
 #1. I used a left join to join two different tables: 
 
