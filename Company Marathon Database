@@ -44,3 +44,7 @@ ELSE "Under 25%"
 END AS "quarter_completed"
 FROM marathon
 GROUP BY quarter_completed;
+
+#4. I also used the CASE statement to create a new column that showed the skill level of each of the marathon participants: 
+
+SELECT participant_name, 
