@@ -48,3 +48,10 @@ GROUP BY quarter_completed;
 #4. I also used the CASE statement to create a new column that showed the skill level of each of the marathon participants: 
 
 SELECT participant_name, 
+CASE
+WHEN completion_fraction >= 0.80 THEN "Advanced"
+WHEN completion_fraction >= 0.50 THEN "Intermediate"
+WHEN completion_fraction >= 0.30 THEN "Beginner"
+ELSE "Leisure"
+END AS Skill_Level
+FROM marathon;  
