@@ -72,7 +72,7 @@ END AS Company_Size
 FROM fortune_companies
 ORDER BY employees desc; 
 
-#2. Then, I used the HAVING clause to filter and the industries that have at least 20 paid time off days: 
+#2. Then, I used the HAVING clause to filter the industries that have at least 20 paid time off days: 
 
 SELECT industry, paid_time_off_days
 FROM fortune_companies
