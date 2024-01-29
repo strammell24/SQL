@@ -79,7 +79,7 @@ FROM fortune_companies
 GROUP BY paid_time_off_days
 HAVING paid_time_off_days >= 20;
 
-# Next, I used a logical operator to filter out the top 5 companies that had at least 20 paid time off days and healhcare benefits: 
+#3. Next, I used the "AND" logical operator to filter out the top 5 companies that had at least 20 paid time off days and healhcare benefits: 
 
 SELECT company_name, paid_time_off_days, healthcare_benefits
 FROM fortune_companies
@@ -88,7 +88,7 @@ AND healthcare_benefits = 1
 ORDER BY paid_time_off_days desc
 LIMIT 5;
 
-# Lastly, I used an aggregate function to see the top 10 companies that had the longest employee tenures: 
+#4. Lastly, I used an aggregate function to see the top 10 companies that had the longest employee tenures: 
 
 SELECT company_name, avg_employee_tenure
 FROM fortune_companies
