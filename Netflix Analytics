@@ -68,10 +68,8 @@ WHERE type = 'Movie';
 
 #2. When was the most recent batch of tv shows and/or movies added to the database?
 
-SELECT date_added
-FROM "netflix_titles_info"
-ORDER BY date_added desc
-LIMIT 1; 
+SELECT MAX(date_added) 
+FROM "netflix_titles_info"; 
 
 #3. List all the movies and tv shows in alphabetical order.
 
@@ -79,18 +77,18 @@ SELECT title
 FROM "netflix_titles_info"
 ORDER BY title asc;
 
-#4. Who was the Director for the movie Bright Star?
+#4. Who was the Director for the movie The Starling?
 
-SELECT director
-FROM "CharlotteChaze/BreakIntoTech"."netflix_people" people
-LEFT JOIN "CharlotteChaze/BreakIntoTech"."netflix_titles_info" titles
-ON people.show_id=titles.show_id
-WHERE title = 'Bright Star';
+SELECT People.director 
+FROM "netflix_people" as People 
+LEFT JOIN "netflix_titles_info" as Titles
+ON People.show_id  = Titles.show_id
+WHERE Titles.title = 'The Starling'; 
 
 #5. What is the oldest movie in the database and what year was it made?
 
 SELECT title, release_year
-FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
+FROM "netflix_titles_info"
 WHERE type = 'Movie'
 ORDER BY release_year asc
 LIMIT 1;
