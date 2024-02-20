@@ -93,3 +93,8 @@ WHERE type = 'Movie'
 ORDER BY release_year asc
 LIMIT 1;
 
+#6. How many movies were released in 2021?
+
+SELECT COUNT (*)
+FROM "netflix_titles_info"
+WHERE release_year = '2021' AND type = 'Movie';
