@@ -73,20 +73,19 @@ INSERT INTO BIT_DB.CityBikeLanes values(59,2008, 2021,"Kensington",4,4.9,"yes");
 INSERT INTO BIT_DB.CityBikeLanes values(60,2002, 2021,"Mouse",4.5,4.3,"no");
 
 
-# I then used a CTE to help see which bike lanes were the safest bike lanes based on their ratings being 4.0 or above: 
+#1. I then used a CTE to help see which bike lanes were the safest bike lanes based on their ratings being 4.0 or above: 
 
 WITH average_safety_rating_CTE As (
 SELECT c. street, 
 AVG (c.safetyrating) as  rating
 FROM CityBikeLanes as c
 GROUP BY c.street)
-
 SELECT street, rating, 'Safe Lane' as label
 FROM average_safety_rating_CTE 
 WHERE rating >=4.0
 GROUP BY street;
 
-# Next, I used a window function to help analyze if it is recommended for a safety bike lane to stay or to leave: 
+#2. Next, I used a window function to help analyze if it is recommended for a safety bike lane to stay or to leave according to its average safety rating: 
 
 SELECT street, safetyrating, AVG (safetyrating) OVER (Partition by street)  as "Average_safety_rating", 
 CASE WHEN AVG(safetyrating) OVER (Partition by street) >= 4 THEN "Leave As-Is"
